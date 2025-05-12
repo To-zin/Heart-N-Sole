@@ -1,0 +1,220 @@
+/* Default styles for the navigation bar */
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  overflow: hidden;
+  padding: 0 10px;
+  border-radius: 10px;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #b65800;
+  color: white;
+}
+
+/* Hide the dropdown menu icon by default */
+.topnav .icon {
+  display: none;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none; /* Hide all links except the first one */
+  }
+  .topnav a.icon {
+    display: block; /* Show the dropdown menu icon */
+    float: right;
+  }
+  .topnav .logo img {
+    max-height: 40px; /* Adjust for smaller screens */
+  }
+}
+
+/* When the dropdown menu is active */
+.topnav.responsive {
+  flex-direction: column; /* Stack the links vertically */
+  align-items: flex-start;
+  position: relative;
+}
+
+.topnav.responsive a {
+  display: block; /* Show all links */
+  text-align: left;
+}
+
+body{
+    min-width:100vh;
+    background-color: black;
+     flex-direction: column;
+    display: flex;
+    min-height: 100vh; /* Ensure the body takes full height */
+}
+
+/* Style for the logo container */
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0px;
+  width: 7vh;
+}
+
+.logo-container img {
+  height: auto;
+  max-height: 100px; /* Adjust max height as needed */
+  width: auto;
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .logo-container img {
+    max-height: 50px; /* Adjust for smaller screens */
+  }
+  .topnav {
+    margin-left: 70px; /* Adjust for smaller screens */
+  }
+}
+
+.slideshow-container {
+  position: relative;
+  background-color: white;
+  max-width: 800px; /* Set a maximum width for the slideshow */
+  height: 400px; /* Set a fixed height for the slideshow */
+  margin: auto; /* Center the slideshow horizontally */
+  overflow: hidden;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for better aesthetics */
+    border: 10px solid #e26d0c; /* Border around the slideshow */
+    margin-top: 5vh ;
+}
+
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide all slides by default */
+  animation: slideEffect 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%; /* Ensure the image fits within the container */
+  height: 100%;
+  object-fit: contain; /* Ensure the image covers the slide area */
+}
+/* Keyframes for sliding effect */
+@keyframes slideEffect {
+  from {
+    transform: translateX(100%); /* Start from the right */
+  }
+  to {
+    transform: translateX(0); /* Slide into view */
+  }
+}
+
+/* Show the first slide initially */
+.slideshow-container .slide:first-child {
+  display: block;
+}
+
+.grid-container {
+    margin-top: 1vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 3.5vh; /* Space between grid items */
+  padding: 2vh;
+  background-color: #f4f4f4; /* Optional: Background color for the grid */
+  border-radius: 1vh; /* Optional: Rounded corners */
+}
+
+.grid-item{
+  display: flex;
+  flex-direction: column; /* Stack image and text vertically */
+  justify-content: flex-start; /* Align items at the top */
+  background-color: #e26d0c;
+  margin:auto;
+  padding: 1vh;
+  border-radius:1vh ;
+}
+
+.grid-item img {
+ width: 20vh; /* Make the image fit the width of the container */
+ height: 11vh;
+  border-radius: 5px; /* Optional: Rounded corners for images */
+  margin-bottom: 10px; /* Space between the image and text */
+  margin-left: auto;
+  margin-right: auto;
+object-fit: cover;
+overflow: hidden;
+}
+
+.grid-item p {
+  margin: 0;
+  font-size: 1.7vh;
+  color: white; /* Text color */
+  font-weight: bold;
+
+}
+.link  {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Text color */
+  font-weight: bold; /* Make text bold */
+}
+.grid-item:hover {
+  background-color: #d25c0a; /* Change background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the item on hover */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+cursor: pointer; /* Change cursor to pointer */
+}
+
+
+.top-box {
+  background-color: #e26d0c; /* Background color for the box */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  padding: 1vh 15vh 1vh 15vh; /* Add padding inside the box */
+  font-size: 80px; /* Font size for the text */
+  font-weight: bold; /* Make the text bold */
+  border-radius: 15px; /* Optional: Add rounded corners */
+  margin: 2vh auto; /* Add spacing and center the box */
+  width:fit-content; /* Optional: Limit the width of the 
+  box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  height: fit-content; 
+
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+  margin-top: 10vh;
+
+}
